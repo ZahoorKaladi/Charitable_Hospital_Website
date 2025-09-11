@@ -66,7 +66,10 @@ const BlogPostPage = () => {
         <div className="bg-white rounded-xl shadow-2xl p-6 sm:p-10">
           {/* Post Hero Image */}
           <div className="relative w-full h-80 sm:h-96 overflow-hidden mb-8">
-            <img src={`http://localhost:1337${post.imageUrl}`} alt={post.title} className="w-full h-full object-cover rounded-xl shadow-md" />
+            <img src={`${import.meta.env.VITE_STRAPI_URL}${post.imageUrl}`} alt={post.title} className="w-full h-full object-cover rounded-xl shadow-md" />
+
+
+
           </div>
 
           <h1

@@ -26,9 +26,9 @@ const ServiceDetailPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(
-      `http://localhost:1337/api/services?filters[slug][$eq]=${slug}&populate=*`
-    )
+   fetch(
+  `${import.meta.env.VITE_STRAPI_URL}/api/services?filters[slug][$eq]=${slug}&populate=*`
+)
       .then((res) => res.json())
       .then(({ data }) => {
         const item = data?.[0];

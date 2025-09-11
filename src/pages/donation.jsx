@@ -49,7 +49,7 @@ const DonationPage = () => {
     setSubmissionStatus('submitting');
     
     try {
-      await axios.post('http://localhost:1337/api/donation-submissions', { data: formData });
+     await axios.post(`${import.meta.env.VITE_STRAPI_URL}/api/donation-submissions`, { data: formData });
       setSubmissionStatus('success');
       setTimeout(() => {
         navigate('/about'); 
@@ -211,21 +211,22 @@ const DonationPage = () => {
                   <MapPin size={28} className="text-blue-600" />
                   <div>
                     <h4 className="font-bold text-gray-800">Address</h4>
-                    <p className="text-gray-600">123 Healthcare Road, Karachi, Sindh, Pakistan</p>
+                    <p className="text-gray-600"> Office Near Bhittai Medical Store
+                Shahi Bazaar Darya Khan Marri, Sindh, Pakistan</p>
                   </div>
                 </motion.li>
                 <motion.li className="flex items-center gap-4" variants={itemVariants}>
                   <Phone size={28} className="text-blue-600" />
                   <div>
                     <h4 className="font-bold text-gray-800">Phone</h4>
-                    <p className="text-gray-600">+92 21 1234567</p>
+                    <p className="text-gray-600">+923009756015</p>
                   </div>
                 </motion.li>
                 <motion.li className="flex items-center gap-4" variants={itemVariants}>
                   <Mail size={28} className="text-blue-600" />
                   <div>
                     <h4 className="font-bold text-gray-800">Email</h4>
-                    <p className="text-gray-600">info@peoplecharitablehospital.org</p>
+                    <p className="text-gray-600">Peoplecharitablehospital@gmail.com</p>
                   </div>
                 </motion.li>
                 <motion.li className="flex items-center gap-4" variants={itemVariants}>
@@ -253,7 +254,7 @@ const DonationPage = () => {
                   <a href="#" className="hover:text-blue-600 transition">
                     <Linkedin size={28} />
                   </a>
-                  <a href="https://wa.me/+923001234567" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition">
+                  <a href="https://wa.me/+923009756015" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition">
                     <MessageCircle size={28} />
                   </a>
                 </div>

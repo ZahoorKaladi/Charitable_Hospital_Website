@@ -6,18 +6,17 @@ const ServicePage = () => {
   const [services, setServices] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // This hook now fetches data from your local Strapi instance
+  // Fetch services from Strapi
   useEffect(() => {
-    fetch('http://localhost:1337/api/services?populate=*')
+    fetch(`${import.meta.env.VITE_STRAPI_URL}/api/services?populate=*`)
+   // ('http://localhost:1337/api/services?populate=*')
       .then(res => res.json())
       .then(data => {
         const transformedServices = data.data.map(item => ({
           id: item.id,
-          // Strapi v5 flattens scalar fields and nests media
           title: item.title,
           description: item.description,
           slug: item.slug,
-          // Correctly handle the nested media object
           imageUrl: item.imageUrl?.url || '',
         }));
         setServices(transformedServices);
@@ -47,14 +46,15 @@ const ServicePage = () => {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <p className="text-xl font-bold text-gray-700">Loading services...</p>
+      <div className="flex items-center justify-center min-h-screen bg-gray-50">
+        <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
       </div>
     );
   }
 
   return (
     <div className="font-poppins">
+      {/* Hero Section */}
       <div className="bg-blue-800 text-white py-20 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold mb-2">Our Services</h1>
         <p className="text-base sm:text-lg opacity-80 max-w-2xl mx-auto">
@@ -62,6 +62,7 @@ const ServicePage = () => {
         </p>
       </div>
 
+      {/* Services Grid */}
       <section className="py-16 sm:py-24 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -80,8 +81,10 @@ const ServicePage = () => {
                 <Link to={`/service/${service.slug}`}>
                   <div className="relative w-full h-48 overflow-hidden">
                     <img
-                      src={`http://localhost:1337${service.imageUrl}`}
+                     src={`${import.meta.env.VITE_STRAPI_URL}${service.imageUrl}`}
                       alt={service.title}
+                      loading="lazy"     // ✅ Optimized load
+                      decoding="async"   // ✅ Faster rendering
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-blue-600 opacity-20 transition-opacity duration-300 group-hover:opacity-0"></div>
@@ -101,6 +104,7 @@ const ServicePage = () => {
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="bg-blue-600 text-white py-16 sm:py-20 text-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Make a Difference.</h2>

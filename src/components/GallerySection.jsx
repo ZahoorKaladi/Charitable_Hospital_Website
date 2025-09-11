@@ -8,8 +8,8 @@ const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
-    // This is the fetch call to your local Strapi instance
-    fetch('http://localhost:1337/api/galleries?populate=*')
+    // Fetch gallery data from Strapi
+    fetch(`${import.meta.env.VITE_STRAPI_URL}/api/galleries?populate=*`)
       .then(res => res.json())
       .then(({ data }) => {
         const transformedItems = data.flatMap(galleryEntry =>
@@ -90,9 +90,12 @@ const GallerySection = () => {
               variants={itemVariants}
               onClick={() => setSelectedImage(item)}
             >
+              {/* Optimized image with lazy loading */}
               <img
-                src={`http://localhost:1337${item.imageUrl}`}
+                src={`${import.meta.env.VITE_STRAPI_URL}${item.imageUrl}`}
                 alt={item.caption}
+                loading="lazy"  // <-- Prevents blocking page load
+                decoding="async" // <-- Improves rendering speed
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div
@@ -126,8 +129,10 @@ const GallerySection = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={`http://localhost:1337${selectedImage.imageUrl}`}
+                src={`${import.meta.env.VITE_STRAPI_URL}${selectedImage.imageUrl}`}
                 alt={selectedImage.caption}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto rounded-lg shadow-xl max-h-[80vh]"
               />
               <div className="mt-4 text-center text-white text-sm sm:text-base">

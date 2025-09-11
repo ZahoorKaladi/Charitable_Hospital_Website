@@ -41,7 +41,7 @@ const MissionSection = () => {
           className="flex flex-col md:flex-row items-center gap-8 lg:gap-12"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={containerVariants}
         >
           {/* Text Content */}
@@ -60,12 +60,14 @@ const MissionSection = () => {
           </div>
 
           {/* Image Slider Gallery */}
-          <div className="md:w-1/2 overflow-hidden rounded-xl shadow-xl relative h-56 sm:h-80 lg:h-96 mt-6 md:mt-0">
+          <div className="md:w-1/2 overflow-hidden rounded-xl shadow-xl relative h-56 sm:h-80 lg:h-96 w-full mt-6 md:mt-0">
             <AnimatePresence mode="wait">
               <motion.img
                 key={currentIndex}
                 src={sliderData[currentIndex].imageUrl}
                 alt={sliderData[currentIndex].caption}
+                loading="lazy"       // ✅ Optimize
+                decoding="async"     // ✅ Optimize
                 className="w-full h-full object-cover absolute inset-0"
                 initial="initial"
                 animate="animate"

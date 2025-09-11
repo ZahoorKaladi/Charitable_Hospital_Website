@@ -8,7 +8,7 @@ const TeamCarousel = () => {
 
   useEffect(() => {
     // This is the fetch call to your local Strapi API for all team members
-    fetch('http://localhost:1337/api/team-members?populate=*')
+    fetch(`${import.meta.env.VITE_STRAPI_URL}/api/team-members?populate=*`)
       .then(res => res.json())
       .then(data => {
         const transformedMembers = data.data.map(item => ({
@@ -75,7 +75,9 @@ const TeamCarousel = () => {
               className="bg-white rounded-xl shadow-xl p-6 text-center transform hover:scale-105 transition-all duration-300"
             >
               <div className="w-40 h-40 rounded-full overflow-hidden mx-auto mb-4 border-4 border-blue-200">
-                <img src={`http://localhost:1337${member.imageUrl}`} alt={member.name} className="w-full h-full object-cover" />
+                <img src={`${import.meta.env.VITE_STRAPI_URL}${member.imageUrl}`} alt={member.name} className="w-full h-full object-cover" />
+   
+
               </div>
               <h4 className="text-xl font-bold text-gray-800">{member.name}</h4>
               <p className="text-sm text-blue-600 font-semibold">{member.title}</p>

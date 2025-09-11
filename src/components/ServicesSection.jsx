@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Stethoscope,
   Ambulance,
@@ -8,7 +8,7 @@ import {
   FlaskConical,
   Pill,
   HeartPulse,
-} from 'lucide-react';
+} from "lucide-react";
 
 const iconComponents = {
   Stethoscope,
@@ -24,25 +24,40 @@ const ServicesSection = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:1337/api/services?populate=*')
-      .then(res => res.json())
-      .then(data => {
-        const transformedServices = data.data.map(item => ({
-          id: item.id,
-          title: item.title,
-          description: item.description,
-          slug: item.slug,
-          icon: iconComponents[item.iconName],
-        }));
+    fetch(`${import.meta.env.VITE_STRAPI_URL}/api/services?populate=*`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Fetched services:", data); // 🔎 Debugging
+
+        if (!data || !data.data) {
+          console.error("No data received from Strapi:", data);
+          setServices([]);
+          setIsLoading(false);
+          return;
+        }
+
+        const transformedServices = data.data
+          .filter((item) => item && item.attributes) // ensure attributes exist
+          .map((item) => ({
+            id: item.id,
+            title: item.attributes.title || "Untitled",
+            description: item.attributes.description || "No description available",
+            slug: item.attributes.slug || "",
+            date: item.attributes.date || null,
+            icon:
+              iconComponents[item.attributes.iconName] ||
+              Stethoscope, // fallback icon
+          }));
+
         setServices(transformedServices.slice(0, 6));
         setIsLoading(false);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Failed to fetch services:", error);
         setIsLoading(false);
       });
   }, []);
-  
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -92,11 +107,11 @@ const ServicesSection = () => {
           viewport={{ once: false, amount: 0.2 }}
           variants={containerVariants}
         >
-          {services.map((service, index) => {
+          {services.map((service) => {
             const ServiceIcon = service.icon;
             return (
               <motion.div
-                key={index}
+                key={service.id}
                 className="group bg-white rounded-xl shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl"
                 variants={itemVariants}
               >
@@ -108,9 +123,12 @@ const ServicesSection = () => {
                     <h3 className="text-xl font-bold text-gray-800">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600">
-                      {service.description}
-                    </p>
+                    {service.date && (
+                      <p className="text-sm text-gray-500">
+                        {new Date(service.date).toLocaleDateString()}
+                      </p>
+                    )}
+                    <p className="text-gray-600">{service.description}</p>
                   </div>
                 </Link>
               </motion.div>

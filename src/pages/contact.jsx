@@ -42,9 +42,8 @@ const ContactUs = () => {
     setSubmissionStatus("submitting");
 
     try {
-      await axios.post("http://localhost:1337/api/contact-submissions", {
-        data: formData,
-      });
+      await axios.post(`${import.meta.env.VITE_STRAPI_URL}/api/contact-submissions`, { data: formData });
+     
       setSubmissionStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" }); // ✅ reset
     } catch (error) {

@@ -22,3 +22,19 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# .gitignore
+
+# dependencies
+/node_modules
+.pnp
+.pnp.cjs
+
+# vite
+/dist
+/build
+.vite/
+
+# misc
+.DS_Store
+.env  <-- Add this line
+.env.local

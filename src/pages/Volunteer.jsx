@@ -29,7 +29,7 @@ const VolunteerPage = () => {
 
     try {
       // ✅ This is the key change to connect to Strapi
-      await axios.post('http://localhost:1337/api/volunteer-applications', { data: formData });
+      await axios.post(`${import.meta.env.VITE_STRAPI_URL}/api/volunteer-applications`, { data: formData });
       
       setSubmissionStatus('success');
       setTimeout(() => {
