@@ -7,7 +7,8 @@ import Service from "./pages/service";
 import Donation from "./pages/donation";
 //import BlogPage from "./pages/blog"; // <-- Your main blog page
 import BlogPostPage from "./pages/blog/[slug]"; // <-- Import the new dynamic page
-import BlogPage from "./pages/Blog";
+//import Blog from "./pages/Blog";
+import Blog from "./pages/Blog";
 import ServiceDetailPage from "./pages/services/[slug]";
 import VolunteerPage from "./pages/Volunteer";
 
@@ -24,7 +25,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/service" element={<Service />} />
         <Route path="/donation" element={<Donation />} />
-        <Route path="/blog" element={<BlogPage />} /> {/* <-- Route for the list of all post*/}
+        <Route path="/blog" element={<Blog />} /> {/* <-- Route for the list of all post*/}
         <Route path="/blog/:slug" element={<BlogPostPage />} /> 
        <Route path="/volunteer" element={<VolunteerPage />} />
         

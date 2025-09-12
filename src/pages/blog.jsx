@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const BlogPage = () => {
+const Blog = () => {
   const [blogPosts, setBlogPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -104,4 +104,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default Blog;
