@@ -8,7 +8,7 @@ import Donation from "./pages/donation";
 //import BlogPage from "./pages/blog"; // <-- Your main blog page
 import BlogPostPage from "./pages/blog/[slug]"; // <-- Import the new dynamic page
 //import Blog from "./pages/Blog";
-import Blog from "./pages/Blog";
+import Blog from "./pages/blog";
 import ServiceDetailPage from "./pages/services/[slug]";
 import VolunteerPage from "./pages/Volunteer";
 
