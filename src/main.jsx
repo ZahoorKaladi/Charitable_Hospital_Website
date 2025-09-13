@@ -10,8 +10,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
 
     <Layout> {/* <-- Now, we wrap the App component with Layout */}
-      <App />
-      <ScrollToTop />
+      <App/>
+      <ScrollToTop/>
     </Layout>
   </BrowserRouter>
 );
