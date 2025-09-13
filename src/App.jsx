@@ -10,7 +10,7 @@ import BlogPostPage from "./pages/blog/[slug]"; // <-- Import the new dynamic pa
 //import Blog from "./pages/Blog";
 import Blog from "./pages/blog";
 import ServiceDetailPage from "./pages/services/[slug]";
-import VolunteerPage from "./pages/volunteer";
+import Volunteer from "./pages/volunteer";
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
         <Route path="/donation" element={<Donation />} />
         <Route path="/blog" element={<Blog />} /> {/* <-- Route for the list of all post*/}
         <Route path="/blog/:slug" element={<BlogPostPage />} /> 
-       <Route path="/volunteer" element={<VolunteerPage />} />
+       <Route path="/volunteer" element={<Volunteer />} />
         
         {/* <-- New dynamic route for a single post */}
         <Route path="/service/:slug" element={<ServiceDetailPage />} />

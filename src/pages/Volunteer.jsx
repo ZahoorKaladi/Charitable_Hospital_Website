@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const VolunteerPage = () => {
+const Volunteer = () => {
   const [formData, setFormData] = useState({
     name: '',
     fatherName: '',
@@ -154,4 +154,4 @@ const VolunteerPage = () => {
   );
 };
 
-export default VolunteerPage;
+export default Volunteer;
