@@ -1,13 +1,14 @@
 // src/pages/home.jsx
 import React from "react";
-import Hero from "../components/Hero"; // Assuming your hero component is in this path
-import MissionSection from "../components/MissionSection";
-import CounterSection from "../components/CounterSection";
-import ServicesSection from "../components/ServicesSection";
-import DonationSection from "../components/DonationSection";
+import Hero from "../components/hero"; // Assuming your hero component is in this path
+import MissionSection from "../components/missionsection";
+import CounterSection from "../components/countersection";
+import ServicesSection from "../components/servicessection";
+import DonationSection from "../components/donationsection";
 //import TestimonialsSection from "../components/TestimonialsSection";
-import GallerySection from "../components/GallerySection";
-import BlogSection from "../components/Blogsection";
+import GallerySection from "../components/gallerysection";
+import BlogSection from "../components/blogsection";
+import TeamCarousel from "../components/teamcarousel";
 //import ServiceSection from "../components/ServiceSection"; // Add other sections here
 //import AboutSection from "../components/AboutSection";
 

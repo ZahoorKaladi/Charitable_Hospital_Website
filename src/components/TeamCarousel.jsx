@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import teamMembersData from '../data/teamMembersData'; // Static data
 
 const TeamCarousel = () => {
   const [teamMembers, setTeamMembers] = useState([]);
@@ -7,7 +8,12 @@ const TeamCarousel = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // This is the fetch call to your local Strapi API for all team members
+    // 🔹 Using static data instead of API
+    setTeamMembers(teamMembersData);
+    setIsLoading(false);
+
+    /*
+    // 🔹 If you ever want to switch back to API, uncomment below:
     fetch(`${import.meta.env.VITE_STRAPI_URL}/api/team-members?populate=*`)
       .then(res => res.json())
       .then(data => {
@@ -15,7 +21,6 @@ const TeamCarousel = () => {
           id: item.id,
           name: item.name,
           title: item.title,
-          // Correctly handle the nested media object in Strapi v5
           imageUrl: item.imageUrl?.url || '',
         }));
         setTeamMembers(transformedMembers);
@@ -25,6 +30,7 @@ const TeamCarousel = () => {
         console.error("Failed to fetch team members:", error);
         setIsLoading(false);
       });
+    */
   }, []);
 
   // Auto-sliding effect
@@ -32,11 +38,11 @@ const TeamCarousel = () => {
     if (teamMembers.length > 0) {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % teamMembers.length);
-      }, 6000); 
+      }, 6000);
       return () => clearInterval(interval);
     }
-  }, [teamMembers]); 
-  
+  }, [teamMembers]);
+
   const slideVariants = {
     initial: { x: '100%', opacity: 0 },
     animate: { x: 0, opacity: 1, transition: { duration: 1 } },
@@ -51,12 +57,14 @@ const TeamCarousel = () => {
     );
   }
 
-  // Ensure there are at least 3 members to display for the carousel
-  const visibleMembers = teamMembers.length >= 3 ? [
-    teamMembers[currentIndex],
-    teamMembers[(currentIndex + 1) % teamMembers.length],
-    teamMembers[(currentIndex + 2) % teamMembers.length],
-  ] : teamMembers;
+  const visibleMembers =
+    teamMembers.length >= 3
+      ? [
+          teamMembers[currentIndex],
+          teamMembers[(currentIndex + 1) % teamMembers.length],
+          teamMembers[(currentIndex + 2) % teamMembers.length],
+        ]
+      : teamMembers;
 
   return (
     <div className="relative max-w-7xl mx-auto overflow-hidden">
@@ -74,10 +82,13 @@ const TeamCarousel = () => {
               key={index}
               className="bg-white rounded-xl shadow-xl p-6 text-center transform hover:scale-105 transition-all duration-300"
             >
-              <div className="w-40 h-40 rounded-full overflow-hidden mx-auto mb-4 border-4 border-blue-200">
-                <img src={`${import.meta.env.VITE_STRAPI_URL}${member.imageUrl}`} alt={member.name} className="w-full h-full object-cover" />
-   
-
+              <div className="w-40 h-50 rounded-full overflow-hidden mx-auto mb-4 border-4 border-blue-200">
+                {/* 🔹 Use member.imageUrl directly since it's static now */}
+                <img
+                  src={member.imageUrl}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h4 className="text-xl font-bold text-gray-800">{member.name}</h4>
               <p className="text-sm text-blue-600 font-semibold">{member.title}</p>

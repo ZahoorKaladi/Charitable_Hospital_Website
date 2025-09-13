@@ -6,18 +6,19 @@ export default {
   ],
   theme: {
     extend: {
-      // Add a custom font family
+      // Add custom font families
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
+        urdu: ['"Noto Nastaliq Urdu"', 'serif'], // Urdu font
       },
-      // Add a new keyframe animation
+      // Keyframes
       keyframes: {
         pulseLight: {
           '0%, 100%': { transform: 'scale(1)', opacity: 0.8 },
           '50%': { transform: 'scale(1.05)', opacity: 1 },
         }
       },
-      // Apply the keyframe animation
+      // Animations
       animation: {
         pulseLight: 'pulseLight 4s ease-in-out infinite',
       },

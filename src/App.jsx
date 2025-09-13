@@ -10,7 +10,7 @@ import BlogPostPage from "./pages/blog/[slug]"; // <-- Import the new dynamic pa
 //import Blog from "./pages/Blog";
 import Blog from "./pages/blog";
 import ServiceDetailPage from "./pages/services/[slug]";
-import VolunteerPage from "./pages/Volunteer";
+import VolunteerPage from "./pages/volunteer";
 
 function App() {
   return (

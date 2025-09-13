@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import servicesHomepageData from "../data/servicesHomepageData"; // Static data
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -24,10 +25,12 @@ const ServicesSection = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Commented out the live API fetch for local development
+    /*
     fetch(`${import.meta.env.VITE_STRAPI_URL}/api/services?populate=*`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("Fetched services:", data); // 🔎 Debugging
+        console.log("Fetched services:", data);
 
         if (!data || !data.data) {
           console.error("No data received from Strapi:", data);
@@ -37,7 +40,7 @@ const ServicesSection = () => {
         }
 
         const transformedServices = data.data
-          .filter((item) => item && item.attributes) // ensure attributes exist
+          .filter((item) => item && item.attributes)
           .map((item) => ({
             id: item.id,
             title: item.attributes.title || "Untitled",
@@ -46,7 +49,7 @@ const ServicesSection = () => {
             date: item.attributes.date || null,
             icon:
               iconComponents[item.attributes.iconName] ||
-              Stethoscope, // fallback icon
+              Stethoscope,
           }));
 
         setServices(transformedServices.slice(0, 6));
@@ -56,6 +59,13 @@ const ServicesSection = () => {
         console.error("Failed to fetch services:", error);
         setIsLoading(false);
       });
+    */
+
+    // Fetching data from the local static file
+    setTimeout(() => {
+      setServices(servicesHomepageData);
+      setIsLoading(false);
+    }, 1000);
   }, []);
 
   const containerVariants = {

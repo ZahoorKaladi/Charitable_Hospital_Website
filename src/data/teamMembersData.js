@@ -1,34 +1,22 @@
+
+import DilMurad from '../assets/DilMurad.jpeg';
+
 const teamMembersData = [
-  {
-    name: "Dr. Ayesha Malik",
-    title: "Chief Medical Officer",
-    imageUrl: "https://images.unsplash.com/photo-1559816538-4e8998ae3d99?auto=format&fit=crop&q=80&w=1470",
-  },
-  {
-    name: "Dr. Zeeshan Ali",
-    title: "Head of Pediatrics",
-    imageUrl: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=1470",
-  },
-  {
-    name: "Hina Jamil",
-    title: "Head Nurse",
-    imageUrl: "https://images.unsplash.com/photo-1559828940-d2c6c7e23112?auto=format&fit=crop&q=80&w=1470",
-  },
-  {
-    name: "Imran Khan",
-    title: "Volunteer Coordinator",
-    imageUrl: "https://images.unsplash.com/photo-1622901243734-d02f5a43b02b?auto=format&fit=crop&q=80&w=1470",
-  },
-  {
-    name: "Sana Akram",
-    title: "Community Outreach",
-    imageUrl: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1470",
-  },
-  {
-    name: "Ali Raza",
-    title: "Head of Diagnostics",
-    imageUrl: "https://images.unsplash.com/photo-1584308666351-916c57f9202a?auto=format&fit=crop&q=80&w=1470",
-  },
+  {
+    name: "Dr. Ayesha Malik",
+    title: "Chief Medical Officer",
+    imageUrl: "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?q=80&w=783&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // <-- Corrected
+  },
+  {
+    name: "Dr. Dil Murad ",
+    title: "Head of Peoples Charitable Hospital",
+    imageUrl: DilMurad, // <-- Corrected
+  },
+  {
+    name: "Hina Jamil",
+    title: "Head Nurse",
+    imageUrl:"https://plus.unsplash.com/premium_photo-1661685745163-eddd0d1da80d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZmVtYWxlJTIwZG9jdG9yfGVufDB8fDB8fHww"// <-- Corrected
+  },
 ];
 
 export default teamMembersData;

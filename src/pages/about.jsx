@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Lightbulb, Users, HandHeart } from 'lucide-react';
-import TeamCarousel from '../components/TeamCarousel';
+//import TeamCarousel from '../components/teamcarousel';
 
 const teamMembers = [
   {
@@ -135,7 +135,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Our Team Carousel Section */}
+      {/* Our Team Carousel Section 
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
@@ -149,7 +149,7 @@ const AboutPage = () => {
           </motion.h2>
           <TeamCarousel />
         </div>
-      </section>
+      </section>*/}
 
       {/* Call to Action Section */}
       <section className="bg-blue-600 text-white py-16 sm:py-20 text-center">

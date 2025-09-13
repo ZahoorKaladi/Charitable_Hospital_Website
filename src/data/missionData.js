@@ -1,3 +1,7 @@
+import DRandPatient from '../assets/DRandPatient.jpeg';
+import Workinprogress from '../assets/Workinprogress.jpeg';
+import OurTeam from '../assets/OurTeam.jpeg';
+import Board from '../assets/Board.jpeg';
 export const missionText = {
   title: 'Our Mission',
   text: [
@@ -9,15 +13,19 @@ export const missionText = {
 
 export const sliderData = [
   {
-    imageUrl: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1470",
+    imageUrl: DRandPatient,
     caption: "Caring for every patient with dedication.",
   },
   {
-    imageUrl: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=1470",
-    caption: "Our team provides compassionate care.",
+    imageUrl: Workinprogress,
+    caption: "Work in Progress to serve you better.",
   },
   {
-    imageUrl: "https://images.unsplash.com/photo-1628126588267-be3de2227d81?auto=format&fit=crop&q=80&w=1470",
-    caption: "Supporting communities in need.",
+    imageUrl: OurTeam,
+    caption: "Our dedicated team.",
+  },
+  {
+    imageUrl: Board,
+    caption: "Peoples Charitable Hospital's Board is Being Placed.",
   },
 ];
