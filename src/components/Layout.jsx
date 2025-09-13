@@ -1,9 +1,9 @@
 // src/components/Layout.jsx
 import React from 'react';
 import Navbar from './navbar';
-import Footer from './Footer'; // <-- Import the new Footer component
+import Footer from './footer'; // <-- Import the new Footer component
 
-const Layout = ({ children }) => {
+const layout = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -15,4 +15,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default layout;
