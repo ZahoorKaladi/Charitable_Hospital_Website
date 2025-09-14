@@ -82,7 +82,7 @@ const TeamCarousel = () => {
               key={index}
               className="bg-white rounded-xl shadow-xl p-6 text-center transform hover:scale-105 transition-all duration-300"
             >
-              <div className="w-40 h-50 rounded-full overflow-hidden mx-auto mb-4 border-4 border-blue-200">
+              <div className="w-40 h-45 rounded-full overflow-hidden mx-auto mb-4 border-4 border-blue-200">
                 {/* 🔹 Use member.imageUrl directly since it's static now */}
                 <img
                   src={member.imageUrl}

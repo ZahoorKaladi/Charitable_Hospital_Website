@@ -1,21 +1,46 @@
 
 import DilMurad from '../assets/DilMurad.jpeg';
-
+import AzamTeamMember from '../assets/AzamTeamMember.jpeg';
+import MushrafGillTeamMember from '../assets/MushrafGillTeamMember.jpeg';
+import DrAzamBhatti from '../assets/DrAzamBhatti.jpeg';
+import GhulamMurtaza from '../assets/GhulamMurtaza.jpeg';
+import ZulfiqarKhaskeli from '../assets/ZulfiqarKhaskeli.jpeg';
+import NawazKhaskeliDirector from '../assets/NawazKhaskeliDirector.jpeg';
 const teamMembersData = [
   {
-    name: "Dr. Ayesha Malik",
-    title: "Chief Medical Officer",
-    imageUrl: "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?q=80&w=783&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // <-- Corrected
+    name: "Mushraf Gill",
+    title: "Dedicated Team Member",
+    imageUrl: MushrafGillTeamMember,// <-- Corrected
   },
   {
     name: "Dr. Dil Murad ",
-    title: "Head of Peoples Charitable Hospital",
+    title: "Subcriber Director and Authorize Promotor Peoples Charitable Hospital",
     imageUrl: DilMurad, // <-- Corrected
   },
   {
-    name: "Hina Jamil",
-    title: "Head Nurse",
-    imageUrl:"https://plus.unsplash.com/premium_photo-1661685745163-eddd0d1da80d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZmVtYWxlJTIwZG9jdG9yfGVufDB8fDB8fHww"// <-- Corrected
+    name: "Mufti Muhammad Ahmed Hanfi",
+    title: "Dedicated Team Member",
+    imageUrl: AzamTeamMember,// <-- Corrected
+  },
+{
+    name: "Dr. Azam Bhatti",
+    title: "Medical Officer Peoples Charitable Hospital",
+    imageUrl: DrAzamBhatti,// <-- Corrected
+  },
+{
+    name: "Zulfiqar Khaskheli",
+    title: "Dedicated Team Member",
+    imageUrl: ZulfiqarKhaskeli,// <-- Corrected
+  },
+{
+    name: "Ghulam Murtaza",
+    title: "Dedicated Team Member",
+    imageUrl: GhulamMurtaza,// <-- Corrected
+  },
+{
+    name: "Nawaz Khaskeli",
+    title: "Director Peoples Charitable Hospital",
+    imageUrl: NawazKhaskeliDirector,// <-- Corrected
   },
 ];
 
