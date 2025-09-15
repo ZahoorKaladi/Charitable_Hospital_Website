@@ -6,6 +6,12 @@ import DrAzamBhatti from '../assets/DrAzamBhatti.jpeg';
 import GhulamMurtaza from '../assets/GhulamMurtaza.jpeg';
 import ZulfiqarKhaskeli from '../assets/ZulfiqarKhaskeli.jpeg';
 import NawazKhaskeliDirector from '../assets/NawazKhaskeliDirector.jpeg';
+import  HempathicDrAsifAli from '../assets/HempathicDrAsifAli.jpeg';
+import javedhussianKhoso from '../assets/javedhussianKhoso.jpeg';
+import ShahzaibMughal from '../assets/ShahzaibMughal.jpeg';
+import MazharAli from '../assets/MazharAli.jpeg';
+import ZulfiqarAliSolangi from '../assets/ZulfiqarAliSolangi.jpeg';
+import MujoodAli from '../assets/MujoodAli.jpeg';
 const teamMembersData = [
   {
     name: "Mushraf Gill",
@@ -38,9 +44,39 @@ const teamMembersData = [
     imageUrl: GhulamMurtaza,// <-- Corrected
   },
 {
-    name: "Nawaz Khaskeli",
+    name: "Shahnawaz Khaskeli",
     title: "Director Peoples Charitable Hospital",
     imageUrl: NawazKhaskeliDirector,// <-- Corrected
+  },
+{
+    name: "Dr. Asif Ali",
+    title: "Dedicated Team Member",
+    imageUrl: HempathicDrAsifAli,// <-- Corrected
+  },
+{
+    name: "Javed Hussain Khoso",
+    title: "Dedicated Team Member",
+    imageUrl: javedhussianKhoso,// <-- Corrected
+  },
+{
+    name: "Shahzaib Mughal",
+    title: "Dedicated Team Member",
+    imageUrl: ShahzaibMughal,// <-- Corrected
+  },
+{
+    name: "Mazhar Ali",
+    title: "Dedicated Team Member",
+    imageUrl: MazharAli,// <-- Corrected
+  },
+{
+    name: "Zulfiqar Ali Solangi",
+    title: "Dedicated Team Member",
+    imageUrl: ZulfiqarAliSolangi,// <-- Corrected
+  },
+{
+    name: "Mujood Ali",
+    title: "Dedicated Team Member",
+    imageUrl: MujoodAli,// <-- Corrected
   },
 ];
 
