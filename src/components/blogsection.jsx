@@ -95,7 +95,7 @@ const BlogSection = () => {
                 >
                   <div className="relative w-full h-48 overflow-hidden">
                     <img
-                      src={`${import.meta.env.VITE_STRAPI_URL}${post.imageUrl}`}
+                      src={post.imageUrl}
                       alt={post.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
