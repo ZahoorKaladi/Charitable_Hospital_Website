@@ -38,19 +38,19 @@ const Footer = () => {
                 <FaTwitter size={16} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/peoplescharitablehospital?igsh=eWhmcXk3N2V6ZWc5"
                 className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition"
               >
                 <FaInstagram size={16} />
               </a>
               <a
-                href="#"
+                href="https://youtube.com/@peoplescharitablehospital?si=yh90B-rRtBTCw2nH"
                 className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition"
               >
                 <FaYoutube size={16} />
               </a>
               <a
-                href="https://youtube.com/@peoplescharitablehospital?si=yh90B-rRtBTCw2nH"
+                href="#"
                 className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition"
               >
                 <FaLinkedinIn size={16} />
@@ -69,9 +69,7 @@ const Footer = () => {
                 { to: "/about", text: "About Us" },
                 { to: "/service", text: "Our Services" },
                 { to: "/donation", text: "Donate Now" },
-                { to: "#patient-stories", text: "Patient Stories" },
-                { to: "#gallery", text: "Gallery" },
-                { to: "#", text: "Become a Volunteer" },
+                { to: "/volunteer", text: "Become a Volunteer" },
                 { to: "/contact", text: "Contact Us" },
               ].map((link, idx) => (
                 <li key={idx}>
@@ -138,7 +136,7 @@ const Footer = () => {
       <div className="bg-blue-950 py-4 text-center text-sm opacity-80">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           &copy; 2023 Peoples Charitable Hospital. All Rights Reserved. |
-          Registered Charity No. ABC-123456
+          Registered Charity No. GRS-79814
         </div>
       </div>
     </footer>
