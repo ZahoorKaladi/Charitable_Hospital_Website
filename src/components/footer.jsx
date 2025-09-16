@@ -26,7 +26,7 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1BEBZChDe2/"
                 className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition"
               >
                 <FaFacebookF size={16} />
@@ -50,7 +50,7 @@ const Footer = () => {
                 <FaYoutube size={16} />
               </a>
               <a
-                href="#"
+                href="https://youtube.com/@peoplescharitablehospital?si=yh90B-rRtBTCw2nH"
                 className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition"
               >
                 <FaLinkedinIn size={16} />
