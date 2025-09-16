@@ -81,7 +81,7 @@ const ServicePage = () => {
                 <Link to={`/service/${service.slug}`}>
                   <div className="relative w-full h-48 overflow-hidden">
                     <img
-                     src={`${import.meta.env.VITE_STRAPI_URL}${service.imageUrl}`}
+                     src={post.imageUrl}
                       alt={service.title}
                       loading="lazy"     // ✅ Optimized load
                       decoding="async"   // ✅ Faster rendering
