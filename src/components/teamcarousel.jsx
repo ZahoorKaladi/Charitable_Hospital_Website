@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 const TeamCarousel = () => {
   const [teamMembers, setTeamMembers] = useState([]);
@@ -8,16 +7,16 @@ const TeamCarousel = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Uncommented the API fetch call
+    // 🔹 This is the API fetch call
     fetch(`${import.meta.env.VITE_STRAPI_URL}/api/team-members?populate=*`)
       .then(res => res.json())
       .then(data => {
+        // Corrected data transformation to access nested attributes
         const transformedMembers = data.data.map(item => ({
           id: item.id,
-          // Corrected data transformation to access nested attributes
           name: item.attributes.name,
           title: item.attributes.title,
-          // Correctly access the nested image URL
+          // Correctly access the nested image URL from Cloudinary
           imageUrl: item.attributes.imageUrl.data.attributes.url,
         }));
         setTeamMembers(transformedMembers);
@@ -28,7 +27,7 @@ const TeamCarousel = () => {
         setIsLoading(false);
       });
 
-    // The static data code is now commented out
+    // 🔹 The static data code is now commented out
     /*
     setTeamMembers(teamMembersData);
     setIsLoading(false);
@@ -90,7 +89,7 @@ const TeamCarousel = () => {
                   alt={member.name}
                   className="w-full h-full object-cover"
                 />
-              </div>
+            </div>
               <h4 className="text-xl font-bold text-gray-800">{member.name}</h4>
               <p className="text-sm text-blue-600 font-semibold">{member.title}</p>
             </div>
