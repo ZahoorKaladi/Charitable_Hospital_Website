@@ -145,7 +145,7 @@ const ServiceDetailPage = () => {
             {/* Image */}
             {service.imageUrl && (
               <img
-                src={`http://localhost:1337${service.imageUrl}`}
+                src={post.imageUrl}
                 alt={service.title}
                 className="w-full h-auto mb-8 rounded-xl shadow-md"
               />
