@@ -8,7 +8,7 @@ const BlogPostPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:1337/api/blog-posts?filters[slug][$eq]=${slug}&populate=*`)
+    fetch(`${import.meta.env.VITE_STRAPI_URL}/api/blog-posts?filters[slug][$eq]=${slug}&populate=*`)
       .then(res => res.json())
       .then(data => {
         if (data.data && data.data.length > 0) {
