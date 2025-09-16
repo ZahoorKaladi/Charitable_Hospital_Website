@@ -86,9 +86,7 @@ const TeamCarousel = () => {
             >
               <div className="w-40 h-45 rounded-full overflow-hidden mx-auto mb-4 border-4 border-blue-200">
                 <img
-                  // Correctly using the VITE_STRAPI_MEDIA_URL environment variabl
-                  //src={`${import.meta.env.VITE_STRAPI_MEDIA_URL}${member.imageUrl}`}
-                  src={post.imageUrl}
+                  src={member.imageUrl}
                   alt={member.name}
                   className="w-full h-full object-cover"
                 />
