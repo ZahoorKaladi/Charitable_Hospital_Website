@@ -81,7 +81,7 @@ const ServicePage = () => {
                 <Link to={`/service/${service.slug}`}>
                   <div className="relative w-full h-48 overflow-hidden">
                     <img
-                     src={post.imageUrl}
+                     src={service.imageUrl}
                       alt={service.title}
                       loading="lazy"     // ✅ Optimized load
                       decoding="async"   // ✅ Faster rendering
