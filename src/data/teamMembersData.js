@@ -1,5 +1,5 @@
 
-import DilMurad from '../assets/DilMurad.jpeg';
+import DilMurad from '../assets/DilMurad2.jpeg';
 import AzamTeamMember from '../assets/AzamTeamMember.jpeg';
 import MushrafGillTeamMember from '../assets/MushrafGillTeamMember.jpeg';
 import DrAzamBhatti from '../assets/DrAzamBhatti.jpeg';
@@ -21,7 +21,7 @@ const teamMembersData = [
   {
     name: "Dr. Dil Murad ",
     title: "Subcriber Director and Authorize Promotor Peoples Charitable Hospital",
-    imageUrl: DilMurad, // <-- Corrected
+    imageUrl: DilMurad2, // <-- Corrected
   },
   {
     name: "Mufti Muhammad Ahmed Hanfi",
