@@ -1,5 +1,5 @@
 
-import DilMurad from '../assets/DilMurad2.jpeg';
+import DilMurad2 from '../assets/DilMurad2.jpeg';
 import AzamTeamMember from '../assets/AzamTeamMember.jpeg';
 import MushrafGillTeamMember from '../assets/MushrafGillTeamMember.jpeg';
 import DrAzamBhatti from '../assets/DrAzamBhatti.jpeg';
